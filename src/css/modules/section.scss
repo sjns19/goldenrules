@@ -1,0 +1,53 @@
+.section-container {
+	position: relative;
+	.section {
+		background-color: $--color-dark-grey;
+	}
+	.section:not(:last-child) {
+		border-bottom: 1px solid $--color-darkest-grey;
+	}
+}
+
+.section-header {
+	padding: 3rem 1rem;
+}
+
+.section-paragraph {
+	font-family: 'Source Serif Pro';
+	font-size: .85rem;
+	&.collapsed {
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+.section-title {
+	display: inline-block;
+	color: $--color-gold;
+	font: 800 2rem 'Source Serif Pro', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.section-sub-title {
+	font-family: 'Source Serif Pro';
+	line-height: 1.8;
+}
+
+@media screen and (max-width: $--breakpoint-mobile) {
+	.section-header {
+		padding: 1.5rem;
+	}
+
+	.section-title {
+		font-size: 1.5rem;
+	}
+
+	.section-sub-title {
+		font-size: 1.15rem;
+	}
+
+	.section-paragraph {
+		font-size: .8rem;
+	}
+}

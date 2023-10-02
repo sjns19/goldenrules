@@ -1,0 +1,74 @@
+.link-gold,
+.link-blue,
+.link-grey,
+.link-light-grey,
+.link-dark-grey,
+.link-white {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: color $--transition-time;
+}
+
+.link-gold {
+	color: $--color-gold;
+	transition: color $--transition-time;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $--color-light-gold;
+	}
+}
+
+.link-blue {
+	color: #0c55b6;
+	transition: color $--transition-time;
+	&:hover,
+	&:focus,
+	&:active {
+		color: #4983cf;
+	}
+}
+
+.link-grey {
+	color: $--textcolor-grey;
+	transition: color $--transition-time;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $--textcolor-lightest-grey;
+	}
+}
+
+.link-light-grey {
+	color: $--textcolor-light-grey;
+	transition: color $--transition-time;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $--color-white;
+	}
+}
+
+.link-dark-grey {
+	color: $--textcolor-dark-grey;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $--textcolor-grey;
+	}
+}
+
+.link-white {
+	color: $--color-white;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $--color-white;
+	}
+}
+
+.link-no-underline {
+	text-decoration: none;
+}

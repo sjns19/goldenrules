@@ -1,0 +1,38 @@
+
+.grid {
+	display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+	.grid-item {
+		position: relative;
+		flex-basis: 33.33%;
+		padding: 1rem;
+		box-sizing: border-box;
+		@media (max-width: 920px) {
+			flex-basis: 50%;
+		}
+		@media (max-width: $--breakpoint-mobile) {
+			flex-basis: 100%;
+		}
+	}
+	@media (max-width: $--breakpoint-mobile) {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
+}
+
+.-m-grid-col {
+	@media (max-width: 976px) {
+		width: 60%;
+		margin: auto;
+		flex-direction: column;
+	}
+	@media (max-width: $--breakpoint-tablet) {
+		width: 60%;
+		margin: auto;
+		flex-direction: column;
+	}
+	@media (max-width: $--breakpoint-mobile) {
+		width: auto;
+	}
+}

@@ -1,0 +1,197 @@
+@-webkit-keyframes slide-up {
+  from {
+    -webkit-transform: translateY(4rem);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes slide-up {
+  from {
+    -moz-transform: translateY(4rem);
+    opacity: 0;
+  }
+  to {
+    -moz-transform: translateY(0);
+    opacity: 1;
+  }
+}
+  
+@keyframes slide-up {
+  from {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// For loader
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// For flashing certain element - used for indicating cookies section
+@-webkit-keyframes flash-off {
+  from { opactiy: 1; }
+  to { opacity: 0; }
+}
+
+@-moz-keyframes flash-off {
+  from { opactiy: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes flash-off {
+  from { opactiy: 1; }
+  to { opacity: 0; }
+}
+
+// Slide animations for the items in the homepage upon scroll
+@-webkit-keyframes img-slide-in-left {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(-4rem, -4rem);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+	}
+}
+
+@-moz-keyframes img-slide-in-left {
+	from {
+		opacity: 0;
+		-moz-transform: translate(-4rem, -4rem);
+	}
+	to {
+		opacity: 1;
+		-moz-transform: translate(0, 0);
+	}
+}
+
+@keyframes img-slide-in-left {
+	from {
+		opacity: 0;
+		transform: translate(-4rem, -4rem);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@-webkit-keyframes img-slide-in-right {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(4rem, 4rem);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate(0, 0);
+	}
+}
+
+@-moz-keyframes img-slide-in-right {
+	from {
+		opacity: 0;
+		-moz-transform: translate(4rem, 4rem);
+	}
+	to {
+		opacity: 1;
+		-moz-transform: translate(0, 0);
+	}
+}
+
+@keyframes img-slide-in-right {
+	from {
+		opacity: 0;
+		transform: translate(4rem, 4rem);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@-webkit-keyframes img-outerlay-slide-left {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate(-2rem, -2rem);
+	}
+}
+
+@-moz-keyframes img-outerlay-slide-left {
+	from {
+		opacity: 0;
+		-moz-transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		-moz-transform: translate(-2rem, -2rem);
+	}
+}
+
+@keyframes img-outerlay-slide-left {
+	from {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-2rem, -2rem);
+	}
+}
+
+@-webkit-keyframes img-outerlay-slide-right {
+	from {
+		opacity: 0;
+		-webkit-transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: translate(2rem, 2rem);
+	}
+}
+
+@-moz-keyframes img-outerlay-slide-right {
+	from {
+		opacity: 0;
+		-moz-transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		-moz-transform: translate(2rem, 2rem);
+	}
+}
+
+@keyframes img-outerlay-slide-right {
+	from {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(2rem, 2rem);
+	}
+}

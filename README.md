@@ -1,0 +1,1 @@
+This is a fullstack website written from scratch for a client who disappeared without full payment just one month into production so I just decided to keep the source here. The site uses jQuery for front and php + mysql for backend.

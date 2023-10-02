@@ -1,0 +1,97 @@
+.dropdown {
+	position: relative;
+	display: none;
+  pointer-events: none;
+	& .btn {
+		margin: 1rem;
+		&.btn-block {
+			width: auto;
+		}
+	}
+  &.active {
+		display: block;
+		pointer-events: all;
+	}
+}
+
+.dropdown-contents {
+	position: absolute;
+	background-color: $--color-grey;
+	z-index: 10;
+	margin: .25rem .5rem;
+	width: 180px;
+	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .5);
+  border-radius: $--border-radius-1x;
+	&::before {
+		position: absolute;
+		content: '';
+		border-left: 8px solid transparent;
+		border-bottom: 8px solid $--color-grey;
+		border-right: 8px solid transparent;
+		top: -0.5rem;
+  }
+	& > .dropdown-title {
+		font-size: .8rem;
+		padding: 1rem;
+	}
+}
+
+.dropdown-left {
+	& .dropdown-contents {
+		left: 0;
+		right: initial;
+  }
+	& .dropdown-contents::before {
+		left: .65rem;
+	}
+}
+
+.dropdown-right {
+	& .dropdown-contents {
+		left: initial;
+		right: 0;
+  }
+	& .dropdown-contents::before {
+		right: .65rem;
+	}
+}
+
+.dropdown-icon {
+	position: relative;
+	top: .25rem;
+	right: .35rem;
+}
+
+.dropdown-link {
+	position: relative;
+	display: block;
+	color: $--color-white;
+	font-size: .8rem;
+	padding: .65rem 1rem;
+  text-decoration: none;
+	opacity: .6;
+	transition: opacity $--transition-time;
+	&::before {
+		position: absolute;
+		content: '';
+		background-color: $--color-lighter-grey;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: -1;
+		transition: opacity $--transition-time;
+	}
+	&:last-child {
+		&::before {
+			border-radius: 0 0 $--border-radius-1x $--border-radius-1x;
+		}
+	}
+	&:hover {
+		opacity: 1;
+		&::before {
+			opacity: .2;
+		}
+  }
+}

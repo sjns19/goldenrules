@@ -1,0 +1,101 @@
+// text weights
+.txt-light {
+	font-weight: 300 !important;
+}
+
+.txt-bold {
+	font-weight: 600 !important;
+}
+
+// Text alignment
+.txt-align-center {
+	text-align: center;
+}
+
+.txt-align-left {
+	text-align: left;
+}
+
+// Text case
+.txt-uppercase {
+	text-transform: uppercase;
+}
+
+// Text sizes
+.txt-xs {
+  font-size: .6rem;
+}
+
+.txt-sm {
+  font-size: .7rem;
+}
+
+.txt-mds {
+  font-size: .8rem;
+}
+
+.txt-md {
+  font-size: 1rem;
+}
+
+.txt-mdl {
+  font-size: 1.5rem;
+}
+
+.txt-lg {
+  font-size: 3rem;
+}
+
+.txt-xl {
+  font-size: 4rem;
+}
+
+// Text colors
+.txt-gold {
+	color: $--color-gold;
+}
+
+.txt-grey {
+	color: $--textcolor-grey;
+}
+
+.txt-light-grey {
+	color: $--textcolor-light-grey;
+}
+
+.txt-dark-grey {
+	color: $--textcolor-dark-grey;
+}
+
+.txt-white {
+	color: $--color-white;
+}
+
+.txt-danger {
+	color: $--color-danger;
+}
+
+.txt-info {
+	color: $--color-info;
+}
+
+.txt-success {
+	color: $--color-success;
+}
+
+.txt-warning {
+	color: $--color-warning;
+}
+
+.txt-break {
+	white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.txt-grad-gold {
+	color: $--color-gold;
+	background-image: linear-gradient(to right, $--color-gold, $--color-dark-gold);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

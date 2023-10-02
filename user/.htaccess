@@ -1,0 +1,9 @@
+Options +FollowSymLinks -MultiViews
+<IfModule mod_rewrite.c>
+	RewriteBase /user/
+	RewriteEngine On
+	RewriteRule ^([A-Za-z0-9_-]+)/?$ index.php?displaypage=$1 [L,NC]
+	RewriteRule ^([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)/?$ index.php?displaypage=$1&sub=$2 [L,NC]
+</IfModule>
+# Redirect to the custom 404 page if the user enters invalid URL
+ErrorDocument 404 /404.php

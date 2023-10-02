@@ -1,0 +1,55 @@
+// Color variables
+$--color-black: #000000;
+$--color-barely-black: #050505;
+$--color-darkest-grey:#090909;
+$--color-darker-grey: #101010;
+$--color-dark-grey: #141414;
+$--color-grey: #1d1d1d;
+$--color-light-grey: #555555;
+$--color-lighter-grey: #888888;
+$--color-lightest-grey: #bbbbbb;
+$--color-white: #ffffff;
+
+$--color-gold: #ebc47f;
+$--color-dark-gold: #795e30;
+$--color-light-gold: #ebd8b8;
+
+$--color-danger: #e35549;
+$--color-success: #419b2a;
+$--color-warning: #b97323;
+$--color-info: #4774c9;
+
+// Text colors
+$--textcolor-darkest-grey: #555555;
+$--textcolor-dark-grey: #777777;
+$--textcolor-grey: #999999;
+$--textcolor-light-grey: #aaaaaa;
+$--textcolor-lightest-grey: #cccccc;
+
+// Transition time
+$--transition-time: .25s;
+
+// Sizes
+
+// Breakpoint where the page wrapper should start fitting the screen
+$--wrapper-breakpoint: 1100px;
+
+// Wrapper's width
+$--wrapper-max-width: 1080px;
+
+// The smallest screen size where the page should no longer be responsive
+$--breakpoint-smallest-screen: 315px;
+
+// Medium screen width
+$--breakpoint-medium-screen: 882px;
+// Tablet size screen
+$--breakpoint-tablet: 768px;
+
+// Mobile sie screen
+$--breakpoint-mobile: 664px;
+
+// Border radius
+$--border-radius-1x: 5px;
+$--border-radius-fully-round: 100px;
+// Border color
+$--border-color: $--color-grey;

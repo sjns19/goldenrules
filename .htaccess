@@ -1,0 +1,26 @@
+Options +FollowSymLinks -MultiViews
+<IfModule mod_rewrite.c>
+	RewriteBase /
+	RewriteEngine On
+	
+	# Removing the .php from the URL.
+	RewriteCond %{REQUEST_FILENAME}\.php -f
+	RewriteRule ^([^\.]+)$ $1.php [L]
+
+	# Rewriting the query string URL for the URL path
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([A-Za-z0-9-]+)/?$ index.php?displaypage=$1 [L,NC]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ index.php?displaypage=$1&sub=$2 [L,NC]
+</IfModule>
+<IfModule mod_deflate.c>
+	<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|html|php|txt|xml)$">
+		SetOutputFilter DEFLATE
+	</FilesMatch>
+</IfModule>
+
+# Redirect to the custom 404 page if the user enters invalid URL
+ErrorDocument 404 /404.php
