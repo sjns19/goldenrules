@@ -1,13 +1,13 @@
 <?php
 
 if (!isset($_POST['grt_analysis_updated_data']))
-  exit(http_build_query(404));
+  	exit(http_build_query(404));
 
 session_start();
 $data = json_decode($_POST['grt_analysis_updated_data']);
 
 if (!isset($_SESSION['csrf_token']) || $_SESSION['csrf_token'] != $data->csrf_token)
-  exit(http_build_query(404));
+  	exit(http_build_query(404));
 
 require_once '../../../autoload.php';
 
@@ -25,15 +25,16 @@ $analysis->thumbnail_url = $current_thumbnail;
 $analysis->editor_id = $_SESSION['grt_user']['id'];
 
 if ($analysis->Update()) {
-  if (!is_null($thumbnail_image)) {
-    $analysis->replaceThumbnail($thumbnail_image, App::IMAGE_COMPRESS_LEVEL);
-  }
+	if (!is_null($thumbnail_image)) {
+		$analysis->replaceThumbnail($thumbnail_image, App::IMAGE_COMPRESS_LEVEL);
+	}
 
-  $log = new ActivityLog($connection);
-  $log->text = '<strong>' . $_SESSION['grt_user']['name'] . '</strong> edited a trading analysis <strong>(ID: ' . $analysis->id . ')</strong>';
-  $log_type = (bool) $_SESSION['grt_user']['is_admin'] ? ActivityLog::ACTIVITY_LOG_TYPE_ADMIN : ActivityLog::ACTIVITY_LOG_TYPE_USER;
-  $log->Create($log_type);
-  
-  echo Response::Send('Trading analysis has been updated successfully.', Response::SUCCESS);
+	$log = new ActivityLog($connection);
+	$log->text = '<strong>' . $_SESSION['grt_user']['name'] . '</strong> edited a trading analysis <strong>(ID: ' . $analysis->id . ')</strong>';
+	$log_type = (bool) $_SESSION['grt_user']['is_admin'] ? ActivityLog::ACTIVITY_LOG_TYPE_ADMIN : ActivityLog::ACTIVITY_LOG_TYPE_USER;
+	$log->Create($log_type);
+	
+	echo Response::Send('Trading analysis has been updated successfully.', Response::SUCCESS);
 }
+
 $db->close();

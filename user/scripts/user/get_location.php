@@ -1,13 +1,13 @@
 <?php
 
 if (!isset($_POST['grt_user_ip']))
-  exit(http_response_code(404));
+	exit(http_response_code(404));
 
 $data = json_decode($_POST['grt_user_ip']);
 $ip = $data->ip;
 
 if (!filter_var($ip, FILTER_VALIDATE_IP))
-  exit(json_encode(['response' => 'error']));
+  	exit(json_encode(['response' => 'error']));
 
 require_once '../../../autoload.php';
 

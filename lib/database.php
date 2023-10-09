@@ -17,6 +17,7 @@ class Database {
 
 	public function connect(): object {
 		$this->connection = null;
+
 		try {
 			$this->connection = new PDO('mysql:host=' . $this->db_host . ';dbname=' . $this->db_name, $this->db_user, $this->db_pass);
 			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,10 +26,11 @@ class Database {
 		} catch (PDOException $e) {
 			exit('<strong>Error:</strong> There was a problem connecting to the database.');
 		}
+
 		return $this->connection;
 	}
 
-  public function close() {
-  	$this->connection = null;
-  }
+ 	public function close() {
+  		$this->connection = null;
+  	}
 }

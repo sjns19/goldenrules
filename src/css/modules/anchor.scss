@@ -14,6 +14,7 @@
 .link-gold {
 	color: $--color-gold;
 	transition: color $--transition-time;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -24,6 +25,7 @@
 .link-blue {
 	color: #0c55b6;
 	transition: color $--transition-time;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -34,6 +36,7 @@
 .link-grey {
 	color: $--textcolor-grey;
 	transition: color $--transition-time;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -44,6 +47,7 @@
 .link-light-grey {
 	color: $--textcolor-light-grey;
 	transition: color $--transition-time;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -53,6 +57,7 @@
 
 .link-dark-grey {
 	color: $--textcolor-dark-grey;
+
 	&:hover,
 	&:focus,
 	&:active {
@@ -62,6 +67,7 @@
 
 .link-white {
 	color: $--color-white;
+
 	&:hover,
 	&:focus,
 	&:active {

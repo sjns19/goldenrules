@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 if (!isset($_POST['grt_user_login']))
-  exit(http_response_code(404));
+	exit(http_response_code(404));
 
 require_once '../../autoload.php';
 require_once '../messages.php';
@@ -20,10 +20,10 @@ $email_or_username = filter_var($data->user_email_username, FILTER_SANITIZE_STRI
 $tmp = $user->getTemporaryData($email_or_username);
 
 if (empty($tmp['data']))
-  exit(Response::Send(MSG_ACCOUNT_DOES_NOT_EXIST, Response::ERROR));
+	exit(Response::Send(MSG_ACCOUNT_DOES_NOT_EXIST, Response::ERROR));
 
 if (!password_verify($data->user_password, $tmp['data']['password']))
-  exit(Response::Send(MSG_INCORRECT_CREDS, Response::ERROR));
+	exit(Response::Send(MSG_INCORRECT_CREDS, Response::ERROR));
 
 $id = $tmp['data']['id'];
 $ip = App::getClientIP();

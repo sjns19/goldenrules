@@ -1,21 +1,21 @@
 <?php
 
 class PageRequest {
-  public $requested_for;
-  public $timestamp;
-  public $token;
-  public $type;
+	public $requested_for;
+	public $timestamp;
+	public $token;
+	public $type;
 
 	public const REQUEST_TYPE_RESET_PASSWORD = 'RESET_PASSWORD';
 	public const REQUEST_TYPE_CHANGE_EMAIL = 'CHANGE_EMAIL';
-  public const REQUEST_TYPE_VERIFY_EMAIL = 'VERIFY_EMAIL';
+	public const REQUEST_TYPE_VERIFY_EMAIL = 'VERIFY_EMAIL';
 
-  private $db_connection;
-  private $db_table = 'grt_temp_pages';
+	private $db_connection;
+	private $db_table = 'grt_temp_pages';
   
-  function __construct(object $db_connection) {
-    $this->db_connection = $db_connection;
-  }
+	function __construct(object $db_connection) {
+		$this->db_connection = $db_connection;
+	}
 
 	public function Create(): bool {
 		$query = '
@@ -36,6 +36,7 @@ class PageRequest {
 		];
 
 		$stmt = $this->db_connection->prepare($query);
+
 		return ($stmt->execute($params)) ? true : false;
 	}
 
@@ -48,13 +49,13 @@ class PageRequest {
 		';
 
 		$stmt = $this->db_connection->prepare($query);
-    return $stmt->execute(['token' => $this->token]) ? true : false;
+    	
+		return $stmt->execute(['token' => $this->token]) ? true : false;
 	}
 
 	public function getData(string $token): array {
-    $data_arr = [];
-    $data_arr['data'] = [];
-		
+		$data_arr = [];
+		$data_arr['data'] = [];
 		$query = '
 			SELECT 
 				token,
@@ -67,7 +68,8 @@ class PageRequest {
 				token=:token 
 			OR 
 				requested_for=:user_token 
-			LIMIT 1';
+			LIMIT 1
+		';
 
 		$params = [
 			'token' => $token,

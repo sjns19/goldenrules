@@ -1,112 +1,117 @@
-
 .avatar {
-  position: relative;
-  background-color: $--color-grey;
-  overflow: hidden;
-  text-align: center;
-  margin: .45rem;
-  border-radius: $--border-radius-fully-round;
-  z-index: 3;
+	position: relative;
+	background-color: $--color-grey;
+	overflow: hidden;
+	text-align: center;
+	margin: .45rem;
+	border-radius: $--border-radius-fully-round;
+	z-index: 3;
 
-  &.avatar-bordered {
-    border: 1px solid $--color-gold;
-  }
+	&.avatar-bordered {
+		border: 1px solid $--color-gold;
+	}
 
-  &.avatar-hoverable {
-    cursor: pointer;
-  }
+	&.avatar-hoverable {
+		cursor: pointer;
+	}
 
-  & > .avatar-img {
-    display: block;
-    border-radius: inherit;
-  }
+	&>.avatar-img {
+		display: block;
+		border-radius: inherit;
+	}
 
-  & > .avatar-no-img {
-    color: $--color-white;
-    border-radius: inherit;
-    line-height: 0;
-  }
+	&>.avatar-no-img {
+		color: $--color-white;
+		border-radius: inherit;
+		line-height: 0;
+	}
 
-  &.avatar-sm {
-    & > .avatar-img,
-    & > .avatar-no-img {
-      height: 38px;
-      width: 38px;
-    }
+	&.avatar-sm {
 
-    & > .avatar-no-img {
-      font-size: .8rem;
-      padding-top: .9rem;
-    }
-  }
+		&>.avatar-img,
+		&>.avatar-no-img {
+			height: 38px;
+			width: 38px;
+		}
 
-  &.avatar-md {
-    & > .avatar-img,
-    & > .avatar-no-img {
-      height: 50px;
-      width: 50px;
-    }
+		&>.avatar-no-img {
+			font-size: .8rem;
+			padding-top: .9rem;
+		}
+	}
 
-    & > .avatar-no-img {
-      font-size: 1.5rem;
-      padding-top: 1.5rem;
-    }
-  }
+	&.avatar-md {
 
-  &.avatar-lg {
-    & > .avatar-img,
-    & > .avatar-no-img {
-      height: 80px;
-      width: 80px;
-    }
+		&>.avatar-img,
+		&>.avatar-no-img {
+			height: 50px;
+			width: 50px;
+		}
 
-    & > .avatar-no-img {
-      font-size: 2rem;
-      padding-top: 2.4rem;
-    }
-  }
+		&>.avatar-no-img {
+			font-size: 1.5rem;
+			padding-top: 1.5rem;
+		}
+	}
+
+	&.avatar-lg {
+
+		&>.avatar-img,
+		&>.avatar-no-img {
+			height: 80px;
+			width: 80px;
+		}
+
+		&>.avatar-no-img {
+			font-size: 2rem;
+			padding-top: 2.4rem;
+		}
+	}
 }
 
 /* For mobile displays */
 @media screen and (max-width: $--breakpoint-mobile) {
-  .avatar {
-    &.avatar-sm {
-      & > .avatar-img,
-      & > .avatar-no-img {
-        height: 40px;
-        width: 40px;
-      }
-  
-      & > .avatar-no-img {
-        font-size: 1rem;
-        padding-top: 1.2rem;
-      }
-    }
-  
-    &.avatar-md {
-      & > .avatar-img,
-      & > .avatar-no-img {
-        height: 50px;
-        width: 50px;
-      }
-  
-      & > .avatar-no-img {
-        font-size: 1.2rem;
-        padding-top: 1.5rem;
-      }
-    }
-  
-    &.avatar-lg {
-      & > .avatar-img,
-      & > .avatar-no-img {
-        height: 60px;
-        width: 60px;
-      }
-  
-      & > .avatar-no-img {
-        font-size: 1.5rem;
-        padding-top: 1.8rem;
-      }
-    }
-  }
+	.avatar {
+		&.avatar-sm {
+
+			&>.avatar-img,
+			&>.avatar-no-img {
+				height: 40px;
+				width: 40px;
+			}
+
+			&>.avatar-no-img {
+				font-size: 1rem;
+				padding-top: 1.2rem;
+			}
+		}
+
+		&.avatar-md {
+
+			&>.avatar-img,
+			&>.avatar-no-img {
+				height: 50px;
+				width: 50px;
+			}
+
+			&>.avatar-no-img {
+				font-size: 1.2rem;
+				padding-top: 1.5rem;
+			}
+		}
+
+		&.avatar-lg {
+
+			&>.avatar-img,
+			&>.avatar-no-img {
+				height: 60px;
+				width: 60px;
+			}
+
+			&>.avatar-no-img {
+				font-size: 1.5rem;
+				padding-top: 1.8rem;
+			}
+		}
+	}
 }

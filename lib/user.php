@@ -62,16 +62,18 @@ class User {
 	}
 
 	public function isTaken(string $data, string $check_for): bool {
-    $query = '
+    	$query = '
 			SELECT 
 				email
 			FROM 
 				' . $this->db_table . ' 
 			WHERE 
 				' . $check_for . '=? 
-			LIMIT 1';
+			LIMIT 1
+		';
     
 		$stmt = $this->db_connection->prepare($query);
+		
 		return ($stmt->execute([$data]) && $stmt->rowCount()) ? true : false;
 	}
 
@@ -127,10 +129,10 @@ class User {
 		return $data;
 	}
 	
-  public function getTemporaryData(string $email_username_token): array {
+ 	public function getTemporaryData(string $email_username_token): array {
 		$data_arr = [];
 		$data_arr['data'] = [];
-    $query = '
+   		$query = '
 			SELECT 
 				id,
 				email,
@@ -145,7 +147,8 @@ class User {
 				username=? 
 			OR 
 				uid_token=? 
-			LIMIT 1';
+			LIMIT 1
+		';
 
 		$stmt = $this->db_connection->prepare($query);
 		
@@ -215,7 +218,8 @@ class User {
 				' . $this->db_table . ' 
 			WHERE 
 				email=:email 
-			LIMIT 1';
+			LIMIT 1
+		';
 
 		$stmt = $this->db_connection->prepare($query);
 
@@ -244,6 +248,7 @@ class User {
 		];
 
 		$stmt = $this->db_connection->prepare($query);
+
 		return ($stmt->execute($params)) ? true : false;
 	}
 
@@ -371,6 +376,7 @@ class User {
 					$_SESSION['grt_user']['email'] = $email_arr['data']['temporary_email'];
 				}
 			}
+
 			return $email_arr;
 		} else {
 			$query = '
@@ -388,6 +394,7 @@ class User {
 			];
 
 			$stmt = $this->db_connection->prepare($query);
+
 			return ($stmt->execute($params)) ? true : false;
 		}
 	}
@@ -433,6 +440,7 @@ class User {
 				$data_arr['data'] = $stmt->fetch();
 			}
 		}
+
 		return $data_arr;
 	}
 
@@ -455,6 +463,7 @@ class User {
 				$count = $rows['total_users'];
 			}
 		}
+
 		return $count;
 	}
 
@@ -468,6 +477,7 @@ class User {
 			WHERE 
 				mentor_id=:id
 		';
+
 		$stmt = $this->db_connection->prepare($query);
 
 		if ($stmt->execute(['id' => $id])) {
@@ -477,6 +487,7 @@ class User {
 				$count = $rows['total_students'];
 			}
 		}
+
 		return $count;
 	}
 
@@ -496,11 +507,12 @@ class User {
 		];
 
 		$stmt = $this->db_connection->prepare($query);
+		
 		return ($stmt->execute($params)) ? true : false;
 	}
 
 	public function updateEmailVerification(): bool {
-    $query = '
+   		 $query = '
 			UPDATE 
 				' . $this->db_table . ' 
 			SET 
@@ -514,8 +526,10 @@ class User {
 			if ($this->isLoggedIn()) {
 				$_SESSION['grt_user']['email_verified'] = true;
 			}
+
 			return true;
 		}
+
 		return false;
 	}
 	
@@ -571,6 +585,7 @@ class User {
 		if (!isset($_SESSION['admin']['logged_in'])) {
 			header('location: /admin/');
 		}
+
 		return true;
 	}
 
@@ -593,6 +608,7 @@ class User {
 		];
 		
 		$stmt = $this->db_connection->prepare($query);
+
 		return ($stmt->execute($params)) ? true : false; 
 	}
 
@@ -606,6 +622,7 @@ class User {
 
 		$avatar_url = $this->generateAvatarURL($admin_name, $admin_id, time());
 		$this->compressAvatar($new_avatar, $avatar_path . $avatar_url, 1);
+		
 		return $avatar_url;
 	}
 
@@ -614,8 +631,8 @@ class User {
 		$current_avatar_file = $avatar_path . $file;
 
 		if (file_exists($current_avatar_file)) {
-      unlink($current_avatar_file);
-    }
+			unlink($current_avatar_file);
+		}
 	}
 
 	private function generateAvatarURL(string $user_fullname, int $id, int $unix) {
@@ -623,10 +640,10 @@ class User {
 		$quote = preg_quote($separator, '#');
 
 		$trans = [
-		  '&.+?;' => '',
-		  '[^\w\d _-]' => '',
-		  '\s+' => $separator,
-		  '(' . $quote . ')+' => $separator
+			'&.+?;' => '',
+			'[^\w\d _-]' => '',
+			'\s+' => $separator,
+			'(' . $quote . ')+' => $separator
 		];
 		
 		$user_fullname = strip_tags($user_fullname);
@@ -637,34 +654,34 @@ class User {
 
 		$user_fullname = strtolower($user_fullname);
 		$dashed_name = trim(trim($user_fullname, $separator));
-    $hash = md5('admin_id-' . $id);
-    $unix_hash = hash('adler32', $unix);
+		$hash = md5('admin_id-' . $id);
+		$unix_hash = hash('adler32', $unix);
     
 		return 'avt-' . $dashed_name . '-' . $hash . '-' . $unix_hash . '.png';
 	}
 
 	private function compressAvatar(string $src, string $destination, int $quality) {
-    $img_size = getimagesize($src);
+		$img_size = getimagesize($src);
 
-    switch ($img_size['mime']) {
-      case 'image/jpeg': 
-        $image = imagecreatefromjpeg($src); 
-        imagejpeg($image, $destination, $quality);
-        break; 
-      case 'image/png': 
-        $image = imagecreatefrompng($src); 
-        imagepng($image, $destination, $quality);
-        break; 
-      case 'image/gif': 
-        $image = imagecreatefromgif($src); 
-        imagegif($image, $destination, $quality);
-        break; 
-      default: 
-        $image = imagecreatefromjpeg($src); 
+		switch ($img_size['mime']) {
+			case 'image/jpeg': 
+				$image = imagecreatefromjpeg($src); 
+				imagejpeg($image, $destination, $quality);
+				break; 
+			case 'image/png': 
+				$image = imagecreatefrompng($src); 
+				imagepng($image, $destination, $quality);
+				break; 
+			case 'image/gif': 
+				$image = imagecreatefromgif($src); 
+				imagegif($image, $destination, $quality);
+				break; 
+			default: 
+				$image = imagecreatefromjpeg($src); 
 				imagejpeg($image, $destination, $quality);
 				break;
-    }
-    
+		}
+		
 		return $destination;
 	}
 }

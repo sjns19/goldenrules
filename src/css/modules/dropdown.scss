@@ -1,14 +1,17 @@
 .dropdown {
 	position: relative;
 	display: none;
-  pointer-events: none;
+	pointer-events: none;
+
 	& .btn {
 		margin: 1rem;
+
 		&.btn-block {
 			width: auto;
 		}
 	}
-  &.active {
+
+	&.active {
 		display: block;
 		pointer-events: all;
 	}
@@ -21,7 +24,8 @@
 	margin: .25rem .5rem;
 	width: 180px;
 	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .5);
-  border-radius: $--border-radius-1x;
+	border-radius: $--border-radius-1x;
+
 	&::before {
 		position: absolute;
 		content: '';
@@ -29,8 +33,9 @@
 		border-bottom: 8px solid $--color-grey;
 		border-right: 8px solid transparent;
 		top: -0.5rem;
-  }
-	& > .dropdown-title {
+	}
+
+	&>.dropdown-title {
 		font-size: .8rem;
 		padding: 1rem;
 	}
@@ -40,7 +45,8 @@
 	& .dropdown-contents {
 		left: 0;
 		right: initial;
-  }
+	}
+
 	& .dropdown-contents::before {
 		left: .65rem;
 	}
@@ -50,7 +56,8 @@
 	& .dropdown-contents {
 		left: initial;
 		right: 0;
-  }
+	}
+
 	& .dropdown-contents::before {
 		right: .65rem;
 	}
@@ -68,9 +75,10 @@
 	color: $--color-white;
 	font-size: .8rem;
 	padding: .65rem 1rem;
-  text-decoration: none;
+	text-decoration: none;
 	opacity: .6;
 	transition: opacity $--transition-time;
+
 	&::before {
 		position: absolute;
 		content: '';
@@ -83,15 +91,18 @@
 		z-index: -1;
 		transition: opacity $--transition-time;
 	}
+
 	&:last-child {
 		&::before {
 			border-radius: 0 0 $--border-radius-1x $--border-radius-1x;
 		}
 	}
+
 	&:hover {
 		opacity: 1;
+
 		&::before {
 			opacity: .2;
 		}
-  }
+	}
 }

@@ -164,6 +164,7 @@ if (!strpos($_SERVER['REQUEST_URI'], 'index.php')) {
 						$log->text = 'Email address was changed from <strong>' . $emails['data']['email'] . '</strong> to <strong>' . $emails['data']['temporary_email'] . '</strong> for user <strong>' . $tmp['data']['first_name'] . ' ' . $tmp['data']['last_name'] . '</strong>.';
 						$log->Create(ActivityLog::ACTIVITY_LOG_TYPE_USER);
 					}
+					
 					$db->close();
 				}
 			}

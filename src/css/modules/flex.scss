@@ -1,20 +1,43 @@
-
 .flex {
-  display: flex;
-  &.flex-dir-col { flex-direction: column; }
-  &.align-items-center { align-items: center; }
-  &.align-items-stretch { align-items: stretch; }
-  &.justify-start { justify-content: flex-start; }
-  &.justify-space-around { justify-content: space-around; }
-  &.justify-space-between { justify-content: space-between; }
-  &.justify-flex-end { justify-content: flex-end; }
-  @media only screen and (max-width: $--breakpoint-tablet) {
-    flex-direction: column;
-    &.-m-flex-dir-reverse {
-      flex-direction: column-reverse;
-    }
-    &.flex-no-break {
-      flex-direction: initial !important;
-    }
-  }
+	display: flex;
+
+	&.flex-dir-col {
+		flex-direction: column;
+	}
+
+	&.align-items-center {
+		align-items: center;
+	}
+
+	&.align-items-stretch {
+		align-items: stretch;
+	}
+
+	&.justify-start {
+		justify-content: flex-start;
+	}
+
+	&.justify-space-around {
+		justify-content: space-around;
+	}
+
+	&.justify-space-between {
+		justify-content: space-between;
+	}
+
+	&.justify-flex-end {
+		justify-content: flex-end;
+	}
+
+	@media only screen and (max-width: $--breakpoint-tablet) {
+		flex-direction: column;
+
+		&.-m-flex-dir-reverse {
+			flex-direction: column-reverse;
+		}
+
+		&.flex-no-break {
+			flex-direction: initial !important;
+		}
+	}
 }

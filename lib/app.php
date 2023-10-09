@@ -212,17 +212,17 @@ class App {
 
 	public static function getClientIP(): string {
 		if (isset($_SERVER['REMOTE_ADDR']))
-				return $_SERVER['REMOTE_ADDR'];
+			return $_SERVER['REMOTE_ADDR'];
 		if (isset($_SERVER['HTTP_CLIENT_IP']))
-				return $_SERVER['HTTP_CLIENT_IP'];
+			return $_SERVER['HTTP_CLIENT_IP'];
 		else if (isset($_SERVER['HTTP_X_FORWARDED']))
-				return $_SERVER['HTTP_X_FORWARDED'];
+			return $_SERVER['HTTP_X_FORWARDED'];
 		else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
-				return $_SERVER['HTTP_FORWARDED_FOR'];
+			return $_SERVER['HTTP_FORWARDED_FOR'];
 		else if (isset($_SERVER['HTTP_FORWARDED']))
-				return $_SERVER['HTTP_FORWARDED'];
+			return $_SERVER['HTTP_FORWARDED'];
 		else
-				return 'Unknown';
+			return 'Unknown';
 	}
 
 	public static function getUserOrigin(string $ip): array {
@@ -236,6 +236,7 @@ class App {
 				'alpha' => strtolower($parse->countryCode)
 			];
 		}
+
 		return $data;
 	}
 
@@ -258,6 +259,7 @@ class App {
 		$mailer->isHTML(true);
 		$mailer->Subject = $subject;
 		$mailer->Body = $contents;
+		
 		return $mailer->send() ? true : false;
 	}
 }

@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_POST['grt_resend_email']))
-  exit(http_response_code(404));
+  	exit(http_response_code(404));
 
 require_once '../../autoload.php';
 
@@ -23,13 +23,14 @@ $status = ($response) ? 'success' : 'error';
 $msg = ($response) ? '<strong>Email has been sent</strong><br>Please check your inbox and verify your email address.' : '<strong>Could not send email</strong><p class="mt-1">Your email may have already been verified or the system has failed. If you keep on seeing this error, please contact us.</p>';
 
 echo json_encode([
-  'status' => $status,
-  'message' => $msg
+	'status' => $status,
+	'message' => $msg
 ]);
 
 if ($response === true) {
-  $log = new ActivityLog($connection);
-  $log->text = '<strong>' . $data->user_first_name . ' ' . $data->user_last_name . '</strong> requested to re-send a verification email.';
-  $log->Create(ActivityLog::ACTIVITY_LOG_TYPE_USER);
+	$log = new ActivityLog($connection);
+	$log->text = '<strong>' . $data->user_first_name . ' ' . $data->user_last_name . '</strong> requested to re-send a verification email.';
+	$log->Create(ActivityLog::ACTIVITY_LOG_TYPE_USER);
 }
+
 $db->close();

@@ -1,8 +1,10 @@
 .section-container {
 	position: relative;
+
 	.section {
 		background-color: $--color-dark-grey;
 	}
+
 	.section:not(:last-child) {
 		border-bottom: 1px solid $--color-darkest-grey;
 	}
@@ -15,6 +17,7 @@
 .section-paragraph {
 	font-family: 'Source Serif Pro';
 	font-size: .85rem;
+
 	&.collapsed {
 		height: 0;
 		overflow: hidden;

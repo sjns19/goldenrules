@@ -1,153 +1,153 @@
 .article {
-  display: block;
+	display: block;
 }
 
 .article-header {
-  padding: 1rem;
+	padding: 1rem;
 }
 
 .article-title {
-  color: $--color-white;
-  font: 100 3rem 'Georgia', sans-serif;
-  word-break: break-word;
-  line-height: 1.4;
+	color: $--color-white;
+	font: 100 3rem 'Georgia', sans-serif;
+	word-break: break-word;
+	line-height: 1.4;
 }
 
 .article-image-frame {
-  position: relative;
-  display: block;
-  height: 0;
-  padding-right: 34.5%;
-  padding-bottom: 65.3%;
-  overflow: hidden;
-  border-radius: $--border-radius-1x $--border-radius-1x 0 0;
+	position: relative;
+	display: block;
+	height: 0;
+	padding-right: 34.5%;
+	padding-bottom: 65.3%;
+	overflow: hidden;
+	border-radius: $--border-radius-1x $--border-radius-1x 0 0;
 
-  &>.article-image {
-    position: absolute;
-    display: block;
-    background-color: $--color-grey;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
+	&>.article-image {
+		position: absolute;
+		display: block;
+		background-color: $--color-grey;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 .article-stats {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+	display: flex;
+	align-items: center;
+	padding: 1rem;
 }
 
 .author {
-  padding: 1rem;
+	padding: 1rem;
 
-  &>.author-name {
-    font-size: 1rem;
-    font-weight: normal;
-  }
+	&>.author-name {
+		font-size: 1rem;
+		font-weight: normal;
+	}
 
-  &>.author-sub-text {
-    color: $--color-lightest-grey;
-    font-size: .75rem;
-    margin-top: .15rem;
-  }
+	&>.author-sub-text {
+		color: $--color-lightest-grey;
+		font-size: .75rem;
+		margin-top: .15rem;
+	}
 
-  &>.author-last-edited {
-    color: $--color-lightest-grey;
-    font-size: .7rem;
-  }
+	&>.author-last-edited {
+		color: $--color-lightest-grey;
+		font-size: .7rem;
+	}
 }
 
 .article-share {
-  display: flex;
-  align-items: flex-end;
-  margin: 1rem;
-  list-style-type: none;
+	display: flex;
+	align-items: flex-end;
+	margin: 1rem;
+	list-style-type: none;
 }
 
 .article-share-link {
-  margin-left: 1rem;
-  text-decoration: none;
-  transition: opacity $--transition-time;
+	margin-left: 1rem;
+	text-decoration: none;
+	transition: opacity $--transition-time;
 
-  &:hover,
-  &:focus,
-  &:active {
-    opacity: .7;
-  }
+	&:hover,
+	&:focus,
+	&:active {
+		opacity: .7;
+	}
 }
 
 .article-body {
-  color: $--color-white;
-  padding: 1rem;
-  font: normal 1.15rem 'Georgia', sans-serif;
-  white-space: pre-wrap;
-  word-break: break-word;
-  letter-spacing: .5px;
-  line-height: 2;
+	color: $--color-white;
+	padding: 1rem;
+	font: normal 1.15rem 'Georgia', sans-serif;
+	white-space: pre-wrap;
+	word-break: break-word;
+	letter-spacing: .5px;
+	line-height: 2;
 
-  p,
-  h1,
-  h3,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  strong,
-  b,
-  u,
-  i,
-  small {
-    color: $--color-white  !important;
-  }
+	p,
+	h1,
+	h3,
+	h3,
+	h4,
+	h5,
+	h6,
+	span,
+	strong,
+	b,
+	u,
+	i,
+	small {
+		color: $--color-white !important;
+	}
 
-  ul,
-  ol {
-    margin: 1rem 4rem !important;
-  }
+	ul,
+	ol {
+		margin: 1rem 4rem !important;
+	}
 
-  img {
-    width: 100% !important;
-  }
+	img {
+		width: 100% !important;
+	}
 
-  a {
-    color: $--color-gold  !important;
-    text-decoration: none !important;
-  }
+	a {
+		color: $--color-gold !important;
+		text-decoration: none !important;
+	}
 }
 
 .article-footer {
-  padding: 1rem;
+	padding: 1rem;
 }
 
 /* For mobile displays */
 @media screen and (max-width: $--breakpoint-mobile) {
-  .article-title {
-    font-size: 2rem;
-    line-height: 1.2;
-  }
+	.article-title {
+		font-size: 2rem;
+		line-height: 1.2;
+	}
 
-  .article-body {
-    font-size: .75rem !important;
-  }
+	.article-body {
+		font-size: .75rem !important;
+	}
 
-  .author {
-    padding: .8rem;
-    justify-content: space-evenly;
+	.author {
+		padding: .8rem;
+		justify-content: space-evenly;
 
-    &>.author-name {
-      font-size: .8rem;
-    }
+		&>.author-name {
+			font-size: .8rem;
+		}
 
-    &>.author-sub-text {
-      font-size: .6rem;
-      margin-top: .15rem;
-    }
-  }
+		&>.author-sub-text {
+			font-size: .6rem;
+			margin-top: .15rem;
+		}
+	}
 
-  .article-share {
-    align-items: center;
-  }
+	.article-share {
+		align-items: center;
+	}
 }
